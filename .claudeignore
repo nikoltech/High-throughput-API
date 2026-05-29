@@ -1,0 +1,16 @@
+# Секреты
+.env
+*.env.local
+
+# Build artifacts — Claude не нужно читать бинарники
+bin/
+obj/
+
+# IDE-мусор
+.vs/
+.idea/
+*.user
+
+# Docker volumes / OS
+.DS_Store
+Thumbs.db

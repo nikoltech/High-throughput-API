@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>HApi.Benchmarks.OrdersBenchmark-20260529-101352</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.14.0, Ubuntu 24.04.4 LTS (Noble Numbat) (container)
+Intel Core i5-8300H CPU 2.30GHz (Coffee Lake), 1 CPU, 8 logical and 4 physical cores
+.NET SDK 10.0.300
+  [Host] : .NET 10.0.8 (10.0.826.23019), X64 RyuJIT AVX2
+</code></pre>
+<pre><code>Toolchain=InProcessEmitToolchain  IterationCount=5  WarmupCount=1  
+</code></pre>
+
+<table>
+<thead><tr><th>Method </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Gen0</th><th>Gen1</th><th>Gen2</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>Baseline</td><td>14.434 ms</td><td>6.6632 ms</td><td>1.7304 ms</td><td>1.01</td><td>0.15</td><td>312.5000</td><td>312.5000</td><td>312.5000</td><td>6737.39 KB</td><td>1.000</td>
+</tr><tr><td>EfOptimized</td><td>1.069 ms</td><td>0.5090 ms</td><td>0.1322 ms</td><td>0.07</td><td>0.01</td><td>0.9766</td><td>-</td><td>-</td><td>3.88 KB</td><td>0.001</td>
+</tr><tr><td>Dapper</td><td>1.126 ms</td><td>0.2844 ms</td><td>0.0739 ms</td><td>0.08</td><td>0.01</td><td>-</td><td>-</td><td>-</td><td>3.86 KB</td><td>0.001</td>
+</tr><tr><td>OutputCache</td><td>1.156 ms</td><td>0.3307 ms</td><td>0.0859 ms</td><td>0.08</td><td>0.01</td><td>-</td><td>-</td><td>-</td><td>3.89 KB</td><td>0.001</td>
+</tr><tr><td>InMemoryCache</td><td>1.030 ms</td><td>0.1901 ms</td><td>0.0494 ms</td><td>0.07</td><td>0.01</td><td>-</td><td>-</td><td>-</td><td>2.59 KB</td><td>0.000</td>
+</tr></tbody></table>
+</body>
+</html>

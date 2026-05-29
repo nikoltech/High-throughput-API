@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.Docker.Sdk">
+  <PropertyGroup>
+    <ProjectVersion>2.1</ProjectVersion>
+    <DockerTargetOS>Linux</DockerTargetOS>
+    <ProjectGuid>{2A5E3B6C-8F14-4D2A-9E7B-1C3F8A042D5E}</ProjectGuid>
+    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/health</DockerServiceUrl>
+    <DockerServiceName>api</DockerServiceName>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="docker-compose.yml" />
+    <None Include="docker-compose.override.yml">
+      <DependentUpon>docker-compose.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.benchmark.yml">
+      <DependentUpon>docker-compose.yml</DependentUpon>
+    </None>
+    <None Include=".dockerignore">
+      <DependentUpon>docker-compose.yml</DependentUpon>
+    </None>
+    <None Include=".env" />
+    <None Include=".env.example" />
+    <None Include="COMMANDS.md" />
+    <None Include="Properties\launchSettings.json" />
+  </ItemGroup>
+</Project>

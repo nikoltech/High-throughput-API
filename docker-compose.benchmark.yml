@@ -1,0 +1,12 @@
+services:
+  benchmarks:
+    build:
+      context: ./src/HApi.Benchmarks
+      dockerfile: Dockerfile
+    environment:
+      API_URL: http://api:8080
+    volumes:
+      - ./BenchmarkResults:/app/BenchmarkDotNet.Artifacts
+    depends_on:
+      api:
+        condition: service_healthy

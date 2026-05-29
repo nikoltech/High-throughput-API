@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "dockerComposeServiceName": "api",
+      "publishAllPorts": true,
+      "useSSL": false,
+      "dockerComposeServiceUrl": "{Scheme}://localhost:{ServicePort}/health"
+    },
+    "Docker Compose (Benchmark)": {
+      "commandName": "DockerCompose",
+      "dockerComposeServiceName": "api",
+      "additionalComposeFiles": [ "docker-compose.benchmark.yml" ],
+      "publishAllPorts": true,
+      "useSSL": false,
+      "dockerComposeServiceUrl": "{Scheme}://localhost:{ServicePort}/health"
+    }
+  }
+}
